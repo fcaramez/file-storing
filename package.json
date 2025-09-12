@@ -52,8 +52,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --check"
+      "eslint --fix --ignore-path .eslintignore",
+      "prettier --check --ignore-path .prettierignore"
     ]
   }
 }
