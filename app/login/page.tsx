@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { useAuthActions } from "@convex-dev/auth/react";
+import { useAuthActions } from '@convex-dev/auth/react';
 
 export default function SignIn() {
   const { signIn } = useAuthActions();
 
   return (
-    <div className="flex flex-col gap-8 w-96 mx-auto h-screen justify-center items-center">
+    <div className="mx-auto flex h-screen w-96 flex-col items-center justify-center gap-8">
       <button
         onClick={() =>
-          void signIn("google", {
-            redirectTo: "/",
+          void signIn('google', {
+            redirectTo: '/',
           })
         }
-        className="px-4 py-2 rounded-md bg-black text-white"
+        className="rounded-md bg-black px-4 py-2 text-white"
       >
         Login with Google
       </button>

@@ -1,21 +1,19 @@
-"use client";
+'use client';
 
-import { useConvexAuth } from "convex/react";
+import { useConvexAuth } from 'convex/react';
 
-import { useAuthActions } from "@convex-dev/auth/react";
-import { useRouter } from "next/navigation";
+import { useAuthActions } from '@convex-dev/auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   return (
     <>
-      <header className="sticky top-0 z-10 bg-background p-4 border-b-2 border-slate-200 dark:border-slate-800 flex flex-row justify-between items-center">
+      <header className="bg-background sticky top-0 z-10 flex flex-row items-center justify-between border-b-2 border-slate-200 p-4 dark:border-slate-800">
         Convex + Next.js + Convex Auth
         <SignOutButton />
       </header>
-      <main className="p-8 flex flex-col gap-8">
-        <h1 className="text-4xl font-bold text-center">
-          Convex + Next.js + Convex Auth
-        </h1>
+      <main className="flex flex-col gap-8 p-8">
+        <h1 className="text-center text-4xl font-bold">Convex + Next.js + Convex Auth</h1>
       </main>
     </>
   );
@@ -30,10 +28,10 @@ function SignOutButton() {
     <>
       {isAuthenticated && (
         <button
-          className="bg-slate-200 dark:bg-slate-800 text-foreground rounded-md px-2 py-1"
+          className="text-foreground rounded-md bg-slate-200 px-2 py-1 dark:bg-slate-800"
           onClick={() =>
             void signOut().then(() => {
-              router.push("/login");
+              router.push('/login');
             })
           }
         >
