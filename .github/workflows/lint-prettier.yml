@@ -2,9 +2,7 @@ name: Lint & Prettier Check
 
 on:
   pull_request:
-    branches:
-      - main
-      - staging
+    branches: [main, staging]
     paths:
       - '**/*.ts'
       - '**/*.tsx'
