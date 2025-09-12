@@ -49,11 +49,5 @@
       "esbuild",
       "@tailwindcss/oxide"
     ]
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix --ignore-path .eslintignore",
-      "prettier --check --ignore-path .prettierignore"
-    ]
   }
 }
