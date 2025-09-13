@@ -15,7 +15,7 @@ const compat = new FlatCompat({ baseDirectory: __dirname });
 
 const eslintConfig = [
   {
-    ignores: ['./convex/_generated/**'],
+    ignores: ['./convex/_generated/**', './.next/**'],
   },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
