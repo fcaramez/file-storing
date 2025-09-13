@@ -1,7 +1,9 @@
+import { env } from '../lib/env';
+
 const authConfig = {
   providers: [
     {
-      domain: process.env.CONVEX_SITE_URL,
+      domain: env.server.SITE_URL,
       applicationID: 'convex',
     },
   ],

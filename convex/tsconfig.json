@@ -13,6 +13,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["../src/convex/**/*"],
-  "exclude": ["../src/convex/_generated"]
+  "include": ["../convex/**/*"],
+  "exclude": ["../convex/_generated"]
 }

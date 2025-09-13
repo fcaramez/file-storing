@@ -7,7 +7,7 @@ import createMiddleware from 'next-intl/middleware';
 import { routing } from './lib/i18n/routing';
 
 const isSignInPage = createRouteMatcher(['/login']);
-const isProtectedRoute = createRouteMatcher(['/', '/server']);
+const isProtectedRoute = createRouteMatcher(['/', '/server', '/dashboard']);
 
 const intlMiddleware = createMiddleware(routing);
 
