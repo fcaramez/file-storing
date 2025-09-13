@@ -1,8 +1,10 @@
 'use client';
 
 import { useAuthActions } from '@convex-dev/auth/react';
+import { useTranslations } from 'next-intl';
 
 export default function SignIn() {
+  const t = useTranslations('Home');
   const { signIn } = useAuthActions();
 
   return (
@@ -15,7 +17,7 @@ export default function SignIn() {
         }
         className="rounded-md bg-black px-4 py-2 text-white"
       >
-        Login with Google
+        {t('google-login')}
       </button>
     </div>
   );

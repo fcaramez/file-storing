@@ -1,10 +1,9 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-
 import { useAuthActions } from '@convex-dev/auth/react';
-
+import { useRouter } from 'next/navigation';
 import { useConvexAuth } from 'convex/react';
+
 export default function Home() {
   return (
     <>
@@ -28,7 +27,7 @@ function SignOutButton() {
     <>
       {isAuthenticated && (
         <button
-          className="text-foreground rounded-md bg-slate-200 px-2 py-1 dark:bg-slate-800"
+          className="text-foreground rounded-md bg-slate-200 px-2 py-1"
           onClick={() =>
             void signOut().then(() => {
               router.push('/login');
