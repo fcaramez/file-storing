@@ -1,4 +1,7 @@
 export default async function ServerPage() {
+  if (typeof window === 'undefined') {
+    throw new Error('Intentional SSR build failure');
+  }
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-4 p-8">
       <h1 className="text-center text-4xl font-bold">Convex + Next.js</h1>
