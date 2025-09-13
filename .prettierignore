@@ -1,3 +1,4 @@
 _generated/
 node_modules/
 .next/
+*.css

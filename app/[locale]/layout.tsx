@@ -1,11 +1,14 @@
+import { notFound } from 'next/navigation';
+
+import { ConvexAuthNextjsServerProvider } from '@convex-dev/auth/nextjs/server';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import { ConvexAuthNextjsServerProvider } from '@convex-dev/auth/nextjs/server';
-import ConvexClientProvider from '@/providers/convex-client-provider';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
+
 import { routing } from '@/lib/i18n/routing';
-import { notFound } from 'next/navigation';
+import ConvexClientProvider from '@/providers/convex-client-provider';
+
+import './globals.css';
 
 type Props = {
   children: React.ReactNode;

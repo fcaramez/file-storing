@@ -4,9 +4,9 @@ import { useAuthActions } from '@convex-dev/auth/react';
 import { useLocale, useTranslations } from 'next-intl';
 
 export default function SignIn() {
+  const { signIn } = useAuthActions();
   const t = useTranslations('Home');
   const locale = useLocale();
-  const { signIn } = useAuthActions();
 
   return (
     <div className="mx-auto flex h-screen w-96 flex-col items-center justify-center gap-8">

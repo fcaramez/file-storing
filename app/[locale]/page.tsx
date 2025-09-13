@@ -1,8 +1,9 @@
 'use client';
 
 import { useAuthActions } from '@convex-dev/auth/react';
-import { useRouter } from 'next/navigation';
 import { useConvexAuth } from 'convex/react';
+
+import { useRouter } from '@/lib/i18n/navigation';
 
 export default function Home() {
   return (

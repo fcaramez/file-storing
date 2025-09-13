@@ -46,18 +46,6 @@ const eslintConfig = [
       eqeqeq: ['error', 'always'],
       curly: ['error', 'all'],
       'prettier/prettier': ['error', { singleQuote: true, semi: true, endOfLine: 'auto' }],
-      'no-restricted-imports': [
-        'error',
-        {
-          name: 'next/link',
-          message: 'Please import from `@/i18n/navigation` instead.',
-        },
-        {
-          name: 'next/navigation',
-          importNames: ['redirect', 'permanentRedirect', 'useRouter', 'usePathname'],
-          message: 'Please import from `@/i18n/navigation` instead.',
-        },
-      ],
     },
   },
   {
@@ -85,6 +73,47 @@ const eslintConfig = [
       eqeqeq: ['error', 'always'],
       curly: ['error', 'all'],
       'prettier/prettier': ['error', { singleQuote: true, semi: true, endOfLine: 'auto' }],
+      'no-restricted-imports': [
+        'error',
+        {
+          name: 'next/link',
+          message: 'Please import from `@/i18n/navigation` instead.',
+        },
+        {
+          name: 'next/navigation',
+          importNames: ['redirect', 'permanentRedirect', 'useRouter', 'usePathname'],
+          message: 'Please import from `@/i18n/navigation` instead.',
+        },
+      ],
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', ['parent', 'sibling', 'index']],
+          pathGroups: [
+            {
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'next/navigation',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'next-intl/**',
+              group: 'external',
+              position: 'after',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['react', 'builtin'],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+        },
+      ],
     },
     settings: {
       react: { version: 'detect' },
