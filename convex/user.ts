@@ -1,16 +1,17 @@
-import { getAuthUserId } from '@convex-dev/auth/server';
-import { mutation } from './_generated/server';
+import { query } from './_generated/server';
 
-export const getUser = mutation({
+export const getUser = query({
   args: {},
   handler: async (ctx) => {
-    const userId = await getAuthUserId(ctx);
+    const identity = await ctx.auth.getUserIdentity();
 
-    if (userId === null) {
+    if (!identity) {
       throw new Error('Client is not authenticated!');
     }
-    const user = await ctx.db.get(userId);
 
-    return user;
+    return await ctx.db
+      .query('users')
+      .filter((q) => q.eq(q.field('email'), identity.email))
+      .first();
   },
 });

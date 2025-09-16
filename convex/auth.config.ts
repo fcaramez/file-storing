@@ -1,9 +1,9 @@
-import { env } from '../lib/env';
+import { serverEnv } from '../lib/env/server';
 
 const authConfig = {
   providers: [
     {
-      domain: env.server.CLERK_JWT_ISSUER_DOMAIN,
+      domain: serverEnv.CLERK_FRONTEND_API_URL,
       applicationID: 'convex',
     },
   ],

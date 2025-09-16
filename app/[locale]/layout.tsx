@@ -6,8 +6,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 
+import ConvexClientProvider from '@/components/providers/convex-client-provider';
 import { routing } from '@/lib/i18n/routing';
-import ConvexClientProvider from '@/providers/convex-client-provider';
 
 import './globals.css';
 
